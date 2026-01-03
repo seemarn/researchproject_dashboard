@@ -107,7 +107,7 @@ def load_df(path):
     return pd.read_csv(path)
 
 # --- Load data ---
-df = load_df("data/jobstreet_all_job_dataset_2025_skills_ner_clustered.csv")
+df = load_df("https://huggingface.co/datasets/seemarn/jobstreet/blob/main/jobstreet_all_job_dataset_2025_skills_ner_clustered.csv")
 
 # --- Identify skills column ---
 skills_col = [col for col in df.columns if "skill" in col.lower()][0]
@@ -206,4 +206,5 @@ else:
         .properties(width=900, height=500)
     )
     st.altair_chart(chart, use_container_width=True)
+
 
