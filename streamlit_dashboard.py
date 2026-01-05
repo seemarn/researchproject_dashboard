@@ -110,7 +110,7 @@ def load_df(path):
 df = load_df("https://huggingface.co/datasets/seemarn/jobstreet/resolve/main/jobstreet_all_job_dataset_2025_skills_ner_clustered.csv")
 
 # --- Identify skills column ---
-skills_col = [col for col in df.columns if "skill" in col.lower()][0]
+skills_col = [col for col in df.columns if "ner_skill" in col.lower()][0]
 
 # Convert stringified lists to actual lists
 df[skills_col] = df[skills_col].apply(
@@ -206,6 +206,7 @@ else:
         .properties(width=900, height=500)
     )
     st.altair_chart(chart, use_container_width=True)
+
 
 
 
